@@ -70,6 +70,14 @@ describe('parse api', function() {
       //expect.HaveBeenCalledWith
       should(scopes).eql(expected);
     });
+
+    it('should work fine with functions', function() {
+      function ifCanadian(person) {
+        return person.address.country.name === 'Canada';
+      }
+      var getter = parse(ifCanadian);
+      (getter(person)).should.equal(false);
+    });
   });
 
   describe('setterFn in action', function() {
