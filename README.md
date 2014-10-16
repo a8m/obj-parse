@@ -1,4 +1,4 @@
-# obj-parse [![Build Status](https://travis-ci.org/a8m/obj-parse.svg?branch=master)](https://travis-ci.org/a8m/obj-parse)
+# obj-parse [![Build Status](https://travis-ci.org/a8m/obj-parse.svg?branch=master)](https://travis-ci.org/a8m/obj-parse) [![Coverage Status](https://img.shields.io/coveralls/a8m/obj-parse.svg)](https://coveralls.io/r/a8m/obj-parse?branch=master)
 
 > Get and Set object properties in an **Fast** and **Elegant** way. (with caching and no dependencies!)  
 >Inspire by angular $parse service
