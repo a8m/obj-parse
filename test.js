@@ -42,6 +42,12 @@ describe('parse api', function() {
       (parse('address.country.name')(person)).should.equal(person.address.country.name);
     });
 
+    it('should return undefined if the key path not match', function() {
+      should(parse('Name')(person)).eql(undefined);
+      should(parse('name.age')(person)).eql(undefined);
+      should(parse('name.age').assign(person, 34)).eql(undefined)
+    });
+
     it('should be reusable function(not hold state)', function() {
       var persons = [
         { name: 'A' }, { name: 'B' }, { name: 'C' }
