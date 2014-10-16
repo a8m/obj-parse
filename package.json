@@ -1,0 +1,34 @@
+{
+  "name": "obj-parse",
+  "version": "0.1.0",
+  "description": "Get and Set object properties in an elegant way.",
+  "license": "MIT",
+  "repository": "a8m/obj-parse",
+  "author": {
+    "name": "Ariel Mashraki",
+    "email": "ariel@mashraki.co.il",
+    "url": "https://github.com/a8m/obj-parse"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "./node_modules/mocha/bin/mocha test.js -u bdd -R spec"
+  },
+  "files": [
+    "index.js"
+  ],
+  "keywords": [
+    "getter",
+    "setter",
+    "obj",
+    "object",
+    "get-key",
+    "set-key",
+    "nested-keys"
+  ],
+  "devDependencies": {
+    "mocha": "*",
+    "should": "^4.0.4"
+  }
+}
