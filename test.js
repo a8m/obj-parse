@@ -8,12 +8,14 @@ describe('parse api', function() {
 
   it('should return a function', function() {
     var getter1 = parse('key');
-    var getter2 = parse(function() {});
+    var getter2 = parse(_.noop);
     var getter3 = parse([1,2,3]);
+    _.noop();
 
     (typeof getter1).should.equal('function');
     (typeof getter2).should.equal('function');
     (typeof getter3).should.equal('function');
+    getter3.should.equal(_.noop);
   });
 
   it('should return a noop function', function() {
@@ -35,6 +37,21 @@ describe('parse api', function() {
       address: { country: { name: 'Israel', city: 'Tel Aviv' }  }
     };
 
+    var local = {
+      name: 'Daniel Turing',
+      occupation: 'Scuba Diver',
+      address: { postal: 'HOH-OHO', planet: { name: 'Earth', sun: 'Sol'} }
+    };
+
+    it('should pull equally from either scope or local', function() {
+      (parse('name')(person,local)).should.equal(local.name);
+      (parse('age')(person,local)).should.equal(person.age);
+      (parse('address.country.name')(person,local)).should.equal(person.address.country.name);
+      (parse('address.postal')(person,local)).should.equal(local.address.postal);
+      (parse('address.planet.name')(person,local)).should.equal(local.address.planet.name);
+
+    })
+
     it('should return the getter value', function() {
       (parse('name')(person)).should.equal(person.name);
       (parse('age')(person)).should.equal(person.age);
@@ -46,6 +63,7 @@ describe('parse api', function() {
       should(parse('Name')(person)).eql(undefined);
       should(parse('name.age')(person)).eql(undefined);
       should(parse('name.age').assign(person, 34)).eql(undefined)
+      should(parse('name.age.whatever')(person)).eql(undefined)
     });
 
     it('should be reusable function(not hold state)', function() {
