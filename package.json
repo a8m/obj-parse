@@ -1,6 +1,6 @@
 {
   "name": "obj-parse",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Get and Set object properties in an elegant way.",
   "license": "MIT",
   "repository": "a8m/obj-parse",
