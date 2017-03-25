@@ -65,6 +65,7 @@ getter(person2); //false
 ## License
 
 MIT © [Ariel Mashraki](https://github.com/a8m)
+
 [npm-image]: https://img.shields.io/npm/v/obj-parse.svg?style=flat-square
 [npm-url]: https://npmjs.org/package/obj-parse
 [travis-image]: https://img.shields.io/travis/a8m/obj-parse.svg?style=flat-square
